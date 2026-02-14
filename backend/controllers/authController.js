@@ -48,7 +48,7 @@ export const Login = async (req, res) => {
             return res.status(400).json({message: "Email does not exist"})
         }
 
-        const isMatch = await bcrypt.compare(password, hashedPassword)
+        const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch){
             res.status(400).json({message: "Incorrect password"})
         }
