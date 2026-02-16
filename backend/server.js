@@ -1,10 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
-import authRouter from './routes/user.routes.js';
+import authRouter from './routes/auth.routes.js';
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-import userRouter from './routes/auth.routes.js';
+import userRouter from './routes/user.routes.js';
 dotenv.config();
 const app = express();
 
