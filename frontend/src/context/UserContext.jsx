@@ -4,6 +4,9 @@ export const userDataContext = createContext();
 const UserContext = ({ children }) => {
     const serverUrl = import.meta.env.VITE_SERVER_URL;
     const [userData, setUserData] = useState(null)
+    const [frontendImage, setFrontendImage] = useState(null)
+    const [backendImage, setBackendImage] = useState(null)
+    const [selectedImage, setSelectedImage] = useState(null)
 
     const handleCurrentUser = async () => {
       try {
@@ -18,7 +21,8 @@ const UserContext = ({ children }) => {
       handleCurrentUser()
     },[])
 
-    const value = {serverUrl, userData, setUserData}
+    const value = {serverUrl, userData, setUserData, frontendImage, 
+      setFrontendImage, backendImage, setBackendImage, selectedImage, setSelectedImage}
 
   return (
     <div>
